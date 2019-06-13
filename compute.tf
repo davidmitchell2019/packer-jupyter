@@ -6,7 +6,7 @@ resource "google_compute_instance" "jupytr_vm" {
   tags = ["externalssh"]
   boot_disk {
     initialize_params {
-      image = "jupytr-20190613-1560414399"
+      image = "jupytr-20190613-1560415869"
     }
   }
   network_interface {
