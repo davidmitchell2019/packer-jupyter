@@ -3,3 +3,6 @@
 *.tfstate.backup
 *.terraform
 *.credentials.json
+credentials.json
+venv
+*.venv
