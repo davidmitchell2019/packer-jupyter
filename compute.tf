@@ -3,14 +3,14 @@ resource "google_compute_instance" "jupytr_vm" {
   name = "jupytr-instance"
   machine_type = "f1-micro"
   allow_stopping_for_update = true
-  tags = ["externalssh"]
+  tags = ["allow-jupyter1"]
   boot_disk {
     initialize_params {
-      image = "jupytr-20190613-1560415869"
+      image = "jupytr-20190614-1560503468"
     }
   }
   network_interface {
-    subnetwork = "${google_compute_subnetwork.jupyter-subnet.self_link}"
+    subnetwork = "${var.subnet}"
     access_config {
      // Include this section to give the VM an external ip address
    }
@@ -20,7 +20,7 @@ resource "google_compute_instance" "jupytr_vm" {
      #The best practice is to set the full cloud-platform access scope on the instance, then securely limit the service account's access using IAM roles.
     scopes = ["cloud-platform"]
   }
-  zone = "europe-west2-a"
+  zone = "europe-west2-b"
 }
 
 

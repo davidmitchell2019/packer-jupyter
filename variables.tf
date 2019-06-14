@@ -6,17 +6,22 @@ variable "region_name"
 variable "subnet_cidr"
 {
   type = "string"
-  default = "10.10.10.0/24"
+  default = "10.154.0.0/20"
 }
 variable "project_id"
 {
   type = "string"
-  default = "jupyter-vm-testing"
+  default = "gra-jupyter-vm"
 }
 variable "project_name"
 {
   type = "string"
-  default = "jupyter-vm-testing"
+  default = "gra-jupyter-vm"
+}
+variable "subnet"
+{
+  type = "string"
+  default = "datalab-network"
 }
 ##ceate a random id for a service account##
 resource "random_string" "service_account_id_random" {

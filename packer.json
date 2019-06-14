@@ -3,12 +3,13 @@
     "source_image_family": "debian-9",
     "machine_type": "f1-micro",
     "region": "europe-west2",
-    "zone": "europe-west2-a",
-    "project_id": "jupyter-vm-testing"
+    "zone": "europe-west2-b",
+    "project_id": "gra-jupyter-vm"
   },
   "builders": [
     {
       "type": "googlecompute",
+      "account_file": "credentials.json",
       "project_id": "{{user  `project_id`}}",
       "machine_type": "{{user  `machine_type`}}",
       "source_image_family": "{{user  `source_image_family`}}",
